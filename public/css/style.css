@@ -12,9 +12,26 @@ h1 {
 
 hr {
   margin: 0;
-  border: 1px solid #B4C292;
+  border: 1px solid #D17A22;
 }
 
 #studio-ghibli {
-  
+  padding-top: 50px;
+  padding-left: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.film {
+  margin: 15px;
+  border: 1px solid;
+  padding: 20px;
+  border-color: #4C061D;
+  color: #B4C292;
+  width: 40%;
+}
+
+.film-name {
+  color: #D17A22;
+  margin: 0;
 }
