@@ -22,11 +22,25 @@ hr {
   border: 1px solid #F4A261;
 }
 
+.info-select-bar {
+  margin: 40px 0;
+  padding-left: 50px;
+  padding-right: 120px;
+  display: flex;
+  justify-content: space-between;
+}
+
 .selection {
+  width: 50%;
   color: #E76F51;
   font-size: 20px;
-  padding-left: 50px;
-  margin: 40px 0;
+}
+
+#number-of-films h4 {
+  color: #F2C452;
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
 }
 
 #studio-ghibli {
