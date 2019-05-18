@@ -91,3 +91,13 @@ hr {
   color: #FF9328;
   margin: 10px 0;
 }
+
+select {
+  font-weight: 300;
+  font-size: 15px;
+  padding: 16px 20px;
+  border: none;
+  background-color: #f1f1f1;
+  color: #666666;
+  margin-left: 10px;
+}
