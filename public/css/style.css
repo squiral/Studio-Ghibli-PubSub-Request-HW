@@ -1,37 +1,71 @@
 body {
-  font-family: Futura, sans-serif;
-  margin-left: 80px;
+  font-family: 'Quicksand', sans-serif;
+  margin-left: 60px;
   margin-right: 0px;
-  margin-top: 50px;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+p {
+  font-weight: 300;
 }
 
 h1 {
-  color: #3B3923;
+  font-size: 40px;
+  color: #2A9D8F;
   margin-bottom: 0;
+  font-weight: 500;
 }
 
 hr {
   margin: 0;
-  border: 1px solid #D17A22;
+  border: 1px solid #F4A261;
 }
 
 #studio-ghibli {
   padding-top: 50px;
-  padding-left: 20px;
+  padding-left: 50px;
   display: flex;
   flex-wrap: wrap;
 }
 
 .film {
   margin: 15px;
-  border: 1px solid;
-  padding: 20px;
-  border-color: #4C061D;
-  color: #B4C292;
+  border: 1.5px solid;
+  padding: 25px;
+  border-color: #2A9D8F;
+  color: #666666;
   width: 40%;
 }
 
-.film-name {
-  color: #D17A22;
+.film hr {
   margin: 0;
+  border: 0.8px solid #F2C452;
+}
+
+.film-header-div {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.film-name {
+  width: 60%;
+  font-size: 25px;
+  font-weight: 400;
+  color: #E76F51;
+  margin: 0;
+}
+
+.release-date {
+  font-size: 25px;
+  font-weight: 100;
+  margin: 0;
+  color: #BFBFBF;
+}
+
+.director {
+  font-weight: 400;
+  color: #FF9328;
+  margin: 10px 0;
 }
