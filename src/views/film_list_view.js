@@ -8,9 +8,14 @@ const FilmListView = function (element) {
 
 FilmListView.prototype.bindEvents = function () {
   PubSub.subscribe('Studio_ghibli:data-ready', (event) => {
+    this.clearList();
     this.films = event.detail;
     this.render();
   });
+};
+
+FilmListView.prototype.clearList = function () {
+  this.element.innerHTML = '';
 };
 
 FilmListView.prototype.render = function () {
