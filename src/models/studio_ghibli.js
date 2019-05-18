@@ -2,7 +2,7 @@ const RequestHelper = require('../helpers/request_helper.js')
 const PubSub = require('../helpers/pub_sub.js')
 
 const StudioGhibli = function () {
-  this.films = [];
+  this.filmData = [];
 };
 
 StudioGhibli.prototype.getData = function () {
@@ -10,8 +10,8 @@ StudioGhibli.prototype.getData = function () {
     const requestHelper = new RequestHelper(url);
     requestHelper.get()
       .then((data) => {
-        this.handleDataReady(data)
-        PubSub.publish('Studio_ghibli:data-ready', this.films);
+        this.filmData = data
+        PubSub.publish('Studio_ghibli:data-ready', this.filmData);
       });
 };
 
