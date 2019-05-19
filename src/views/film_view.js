@@ -25,6 +25,9 @@ FilmView.prototype.createFilmDetailViewElement = function () {
   const filmSummaryParagraph = this.createFilmSummaryParagraph();
   filmDetailViewElement.appendChild(filmSummaryParagraph);
 
+  const rottenTomatoesScore = this.createRottenTomatoesScore();
+  filmDetailViewElement.appendChild(rottenTomatoesScore);
+
   return filmDetailViewElement
 
 };
@@ -59,12 +62,19 @@ FilmView.prototype.createReleaseDateElement = function () {
   releaseDate.classList.add('release-date');
   releaseDate.textContent = this.film.release_date;
   return releaseDate;
-}
+};
 
 FilmView.prototype.createFilmSummaryParagraph = function () {
   const filmSummary = document.createElement('p');
   filmSummary.textContent = this.film.description
   return filmSummary;
 }
+
+FilmView.prototype.createRottenTomatoesScore = function () {
+  const score = document.createElement('h4');
+  score.classList.add('tomatoes-score');
+  score.textContent = `Rotten Tomatoes score: ${this.film.rt_score}`;
+  return score;
+};
 
 module.exports = FilmView;

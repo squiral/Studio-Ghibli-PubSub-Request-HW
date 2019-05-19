@@ -10,6 +10,21 @@ StudioGhibli.prototype.bindEvents = function () {
     const directorIndex = evt.detail;
     this.publishFilmsByDirector(directorIndex);
   })
+
+  PubSub.subscribe('SortToggle:change', (evt) => {
+    if (evt.detail === 'on') {
+      this.publishfilmsSortedByScore();
+    }
+    else {
+      const url = 'https://ghibliapi.herokuapp.com/films';
+        const requestHelper = new RequestHelper(url);
+        requestHelper.get()
+          .then((data) => {
+            this.filmData = data;
+            PubSub.publish('Studio_ghibli:data-ready', this.filmData)
+          })
+        }
+      })
 };
 
 StudioGhibli.prototype.getData = function () {
@@ -58,14 +73,11 @@ StudioGhibli.prototype.publishfilmsSortedByScore = function () {
   PubSub.publish('Studio_ghibli:data-ready', filmsSortedByScore);
 };
 
-StudioGhibli.prototype.sortByScore = function (data) {
-  this.filmData = data;
-  // console.log('Before sorting:', this.filmData)
-  const filmsSortedByScore = this.filmData.sort(function(a, b) {
-    return b.rt_score - a.rt_score;
+StudioGhibli.prototype.sortByScore = function () {
+  const filmsSortedByScore = this.filmData.sort(function(film1, film2) {
+    return film2.rt_score - film1.rt_score;
   });
-  debugger;
-  console.log('After sorting:', filmsSortedByScore)
+  return filmsSortedByScore;
 };
 
 
