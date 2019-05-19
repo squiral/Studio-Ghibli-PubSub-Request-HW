@@ -10,8 +10,7 @@ SelectView.prototype.bindEvents = function () {
   });
 
   PubSub.subscribe('SortToggle:change', (evt) => {
-    console.log(this.selectElement)
-    this.selectElement.selectedIndex = 0;
+    this.selectElement.selectedIndex = -1;
   })
 
   this.selectElement.addEventListener('change', (evt) => {

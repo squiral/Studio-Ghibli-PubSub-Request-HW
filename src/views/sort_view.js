@@ -16,7 +16,6 @@ SortView.prototype.bindEvents = function () {
   });
 
   PubSub.subscribe('SelectView:change', (evt) => {
-    console.log(this.selectElement)
     this.sortToggle.checked = false;
   })
 
