@@ -9,10 +9,17 @@ SelectView.prototype.bindEvents = function () {
     this.populateSelect(evt.detail);
   });
 
+  PubSub.subscribe('SortToggle:change', (evt) => {
+    console.log(this.selectElement)
+    this.selectElement.selectedIndex = 0;
+  })
+
   this.selectElement.addEventListener('change', (evt) => {
+    this.selectedDirectorIndex = evt.target.value
     const selectedIndex = evt.target.value;
     PubSub.publish('SelectView:change', selectedIndex);
   });
+
 };
 
 SelectView.prototype.populateSelect = function (directors) {

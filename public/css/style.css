@@ -37,6 +37,7 @@ hr {
 }
 
 #number-of-films h4 {
+  justify: right;
   color: #F2C452;
   font-size: 20px;
   margin: 0;

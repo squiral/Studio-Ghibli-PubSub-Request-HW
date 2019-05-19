@@ -14,6 +14,12 @@ SortView.prototype.bindEvents = function () {
     }
     PubSub.publish('SortToggle:change', toggleMode);
   });
+
+  PubSub.subscribe('SelectView:change', (evt) => {
+    console.log(this.selectElement)
+    this.sortToggle.checked = false;
+  })
+
 };
 
 
