@@ -1,5 +1,4 @@
 const PubSub = require('../helpers/pub_sub.js');
-const NumberOfFilms = require('./number_of_films_view.js')
 const FilmView = require('./film_view.js');
 
 

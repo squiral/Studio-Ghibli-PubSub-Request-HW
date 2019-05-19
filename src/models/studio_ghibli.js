@@ -19,6 +19,7 @@ StudioGhibli.prototype.getData = function () {
       .then((data) => {
         this.filmData = data
         PubSub.publish('Studio_ghibli:data-ready', this.filmData);
+        this.sortByScore(data);
         this.publishDirectors(data);
       });
 };
@@ -51,6 +52,22 @@ StudioGhibli.prototype.filmsByDirector = function (directorIndex) {
       return film.director === selectedDirector;
     });
 };
+
+StudioGhibli.prototype.publishfilmsSortedByScore = function () {
+  const filmsSortedByScore = this.sortByScore();
+  PubSub.publish('Studio_ghibli:data-ready', filmsSortedByScore);
+};
+
+StudioGhibli.prototype.sortByScore = function (data) {
+  this.filmData = data;
+  // console.log('Before sorting:', this.filmData)
+  const filmsSortedByScore = this.filmData.sort(function(a, b) {
+    return b.rt_score - a.rt_score;
+  });
+  debugger;
+  console.log('After sorting:', filmsSortedByScore)
+};
+
 
 
 module.exports = StudioGhibli;

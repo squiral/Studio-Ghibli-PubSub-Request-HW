@@ -1,11 +1,11 @@
 const PubSub = require('../helpers/pub_sub.js')
 
-const NumberOfFilms = function (element) {
+const NumberOfFilmsView = function (element) {
   this.element = element
   this.filmData = [];
 }
 
-NumberOfFilms.prototype.bindEvents = function () {
+NumberOfFilmsView.prototype.bindEvents = function () {
   PubSub.subscribe('Studio_ghibli:data-ready', (event) => {
     this.clearNumber();
     this.filmData = event.detail;
@@ -13,11 +13,11 @@ NumberOfFilms.prototype.bindEvents = function () {
   });
 };
 
-NumberOfFilms.prototype.clearNumber = function () {
+NumberOfFilmsView.prototype.clearNumber = function () {
   this.element.innerHTML = '';
 };
 
-NumberOfFilms.prototype.render = function () {
+NumberOfFilmsView.prototype.render = function () {
   const numberElement = document.createElement('h4');
   if (this.filmData.length > 1) {
     numberElement.textContent = `${this.filmData.length} FILMS`
@@ -28,6 +28,4 @@ NumberOfFilms.prototype.render = function () {
   this.element.appendChild(numberElement)
 };
 
-NumberOfFilms.prototype.render
-
-module.exports = NumberOfFilms;
+module.exports = NumberOfFilmsView;
